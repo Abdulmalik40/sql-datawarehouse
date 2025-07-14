@@ -1,46 +1,36 @@
-SQL Data Warehouse -  Architecture Overview
-Three-tier medallion architecture for progressive data refinement:
+Data Warehouse Project - Medallion Architecture
+📋 Project Overview
+Simple data warehouse project using Bronze → Silver → Gold layers
 
-🥉 Bronze Layer - Raw data ingestion and storage
-🥈 Silver Layer - Cleaned, validated, and enriched data
-🥇 Gold Layer - Business-ready aggregated data and analytics
+Extract data from CSV files
+Transform and clean the data
+Load into SQL Server database
+Analyze with SQL reports
 
 
+🏗️ Architecture
 🥉 Bronze Layer
-Purpose: Store raw, unprocessed data
-Characteristics:
 
-Append-only storage
-Minimal transformations
-Full audit trail
-Schema-on-read approach
-Original data format preserved
-
+Raw CSV data imported as-is
+No transformations applied
 
 🥈 Silver Layer
-Purpose: Cleaned and standardized data
-Key Transformations:
 
-Data type standardization
-Duplicate removal
-Data validation and quality checks
-Business rule application
-Historical tracking (SCD)
-
-Features:
-
-Consistent naming conventions
-Referential integrity
-Data lineage tracking
-Error handling and logging
-
+Data cleaning and validation
+Standardized formats
+Quality checks applied
 
 🥇 Gold Layer
-Purpose: Business-ready analytics data
-Key Features:
 
-Pre-calculated metrics and KPIs
-Dimensional modeling (star/snowflake)
-Business-friendly naming
-Performance optimized
-BI tool ready
+Business-ready analytics data
+Star schema design
+Optimized for reporting
+
+
+🛠️ Tools Used
+
+SQL Server Express - Database
+SSMS - Database management
+CSV Files - Data source
+Git - Version control
+
