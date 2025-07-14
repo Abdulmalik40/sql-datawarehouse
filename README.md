@@ -1,5 +1,4 @@
-SQL Data Warehouse - Medallion Architecture
-🏗️ Architecture Overview
+SQL Data Warehouse -  Architecture Overview
 Three-tier medallion architecture for progressive data refinement:
 
 🥉 Bronze Layer - Raw data ingestion and storage
