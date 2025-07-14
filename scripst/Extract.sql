@@ -1,6 +1,7 @@
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
+	BEGIN TRY
 	PRINT '=================================================='
 	PRINT '           BRONZE LAYER DATA LOADING'
 	PRINT '=================================================='
@@ -99,4 +100,11 @@ BEGIN
 	PRINT '=================================================='
 	PRINT '         ALL BRONZE DATA LOADED SUCCESSFULLY!'
 	PRINT '=================================================='
+END TRY
+BEGIN CATCH
+	PRINT '=================================='
+	PRINT 'ERROR OCCURED DURING BRONZE LAYER '
+	PRINT 'ERROR Message' + ERROR_MESSAGE();
+	PRINT 'ERROR Message' + CAST(ERROR_NUMBER() AS NVARCHAR);
+END CATCH
 END
